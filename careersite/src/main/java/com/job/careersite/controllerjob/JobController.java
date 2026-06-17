@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:5173", "https://shimmering-liger-862c4b.netlify.app/"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://shimmering-liger-862c4b.netlify.app"})
 public class JobController {
     
     @Autowired
