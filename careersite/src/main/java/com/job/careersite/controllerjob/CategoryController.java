@@ -11,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:5173", "https://shimmering-liger-862c4b.netlify.app/", "http://localhost:5174"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://shimmering-liger-862c4b.netlify.app", "http://localhost:5174"})
 public class CategoryController {
     
     @Autowired
