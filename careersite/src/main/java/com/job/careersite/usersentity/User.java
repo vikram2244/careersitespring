@@ -29,7 +29,7 @@ public class User {
         createdAt = LocalDateTime.now();
     }
     
-    // Constructors
+   
     public User() {}
     
     public User(String name, String email, String password, String role) {
@@ -39,7 +39,7 @@ public class User {
         this.role = role;
     }
     
-    // Getters and Setters
+    
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getName() { return name; }
