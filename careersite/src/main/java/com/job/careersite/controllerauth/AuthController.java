@@ -20,8 +20,6 @@ import java.util.Optional;
 public class AuthController {
     @Autowired
     private AuthService authService;
-//    @Autowired
-//    private RegisterRepo userRepository;
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User registerRequest) {
         try {
@@ -59,7 +57,6 @@ public class AuthController {
     @PostMapping("/register-admin")
     public ResponseEntity<?> registerAdmin(@RequestBody User registerRequest) {
         try {
-            // Check if email already exists
             if (authService.existsByEmail(registerRequest.getEmail())) {
                 return ResponseEntity.badRequest().body(Map.of("detail", "Email already registered"));
             }
