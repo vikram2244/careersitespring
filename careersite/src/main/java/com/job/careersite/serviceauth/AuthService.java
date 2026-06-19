@@ -9,8 +9,8 @@ import com.job.careersite.usersentity.User;
 
 public interface AuthService {
     User registerUser(User registerRequest);
-    User registerAdmin(User registerRequest);  // Add this
+    User registerAdmin(User registerRequest);  
     User loginUser(LoginPage loginRequest);
     Map<String, Object> createAuthResponse(User user);
-    boolean existsByEmail(String email);  // Add this
+    boolean existsByEmail(String email); 
 }
