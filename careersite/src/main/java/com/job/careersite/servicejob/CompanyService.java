@@ -31,7 +31,7 @@ public class CompanyService {
             companyMap.put("logo", company.getLogo());
             companyMap.put("website", company.getWebsite());
             
-            // Get job count for this company
+          
             long jobCount = jobRepository.countByCompany(company.getName());
             companyMap.put("job_count", jobCount);
             
@@ -57,7 +57,7 @@ public class CompanyService {
         result.put("logo", company.getLogo());
         result.put("website", company.getWebsite());
         
-        // Get jobs for this company
+      
         Pageable pageable = PageRequest.of(0, 20);
         List<Job> jobs = jobRepository.findByCompanyContaining(company.getName(), pageable).getContent();
         result.put("jobs", jobs);
