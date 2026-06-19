@@ -18,7 +18,7 @@ public class JobResponse {
         this.page = page;
     }
     
-    // Getters and Setters
+  
     public List<Job> getItems() {
         return items;
     }
