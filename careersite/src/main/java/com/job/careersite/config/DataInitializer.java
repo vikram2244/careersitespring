@@ -25,7 +25,7 @@ public class DataInitializer implements CommandLineRunner {
     
     @Override
     public void run(String... args) throws Exception {
-        // Initialize categories
+       
         if (categoryRepository.count() == 0) {
             System.out.println("Initializing default categories...");
             Category[] categories = {
@@ -42,7 +42,7 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println("Categories initialized!");
         }
         
-        // Initialize companies
+        
         if (companyRepository.count() == 0) {
             System.out.println("Initializing default companies...");
             
@@ -63,7 +63,7 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println("Companies initialized!");
         }
         
-        // Initialize sample jobs
+       
         if (jobRepository.count() == 0) {
             System.out.println("Initializing sample jobs...");
             
