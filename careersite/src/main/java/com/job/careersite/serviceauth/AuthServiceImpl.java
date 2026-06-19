@@ -89,7 +89,7 @@ public class AuthServiceImpl implements AuthService {
         System.out.println("Stored role: " + user.getRole());
         System.out.println("Stored password hash: " + user.getPassword());
         
-        // Check password
+       
         boolean passwordMatches = passwordEncoder.matches(password, user.getPassword());
         System.out.println("Password matches: " + passwordMatches);
         
@@ -124,7 +124,7 @@ public class AuthServiceImpl implements AuthService {
         user.setEmail(registerRequest.getEmail());
         user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         user.setName(registerRequest.getName());
-        user.setRole("admin");  // Set role as admin
+        user.setRole("admin");
         
         return userRepository.save(user);
     }
