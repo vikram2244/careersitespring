@@ -38,14 +38,14 @@ public class AdminJobController {
         try {
             Job job = new Job();
             
-            // Map fields from payload to Job entity
+          
             job.setTitle((String) payload.get("title"));
             job.setCompany((String) payload.get("company"));
             job.setLocation((String) payload.get("location"));
             job.setSalary((String) payload.get("salary"));
             job.setExperience((String) payload.get("experience"));
             
-            // Handle both job_type and jobType field names
+            
             String jobType = (String) payload.get("jobType");
             if (jobType == null) {
                 jobType = (String) payload.get("job_type");
@@ -56,7 +56,7 @@ public class AdminJobController {
             job.setDescription((String) payload.get("description"));
             job.setEligibility((String) payload.get("eligibility"));
             
-            // Handle skills (can be List or comma-separated string)
+      
             Object skillsObj = payload.get("skills");
             if (skillsObj instanceof List) {
                 job.setSkills((List<String>) skillsObj);
@@ -64,7 +64,7 @@ public class AdminJobController {
                 job.setSkills(List.of(((String) skillsObj).split(",")));
             }
             
-            // Handle responsibilities
+           
             Object responsibilitiesObj = payload.get("responsibilities");
             if (responsibilitiesObj instanceof List) {
                 job.setResponsibilities((List<String>) responsibilitiesObj);
@@ -72,7 +72,7 @@ public class AdminJobController {
                 job.setResponsibilities(List.of(((String) responsibilitiesObj).split("\n")));
             }
             
-            // Handle both apply_link and applyLink field names
+           
             String applyLink = (String) payload.get("applyLink");
             if (applyLink == null) {
                 applyLink = (String) payload.get("apply_link");
@@ -83,7 +83,7 @@ public class AdminJobController {
             job.setFeatured((Boolean) payload.getOrDefault("featured", false));
             job.setTrending((Boolean) payload.getOrDefault("trending", false));
             
-            // Validation
+          
             if (job.getTitle() == null || job.getTitle().isEmpty()) {
                 return ResponseEntity.badRequest().body(Map.of("error", "Title is required"));
             }
