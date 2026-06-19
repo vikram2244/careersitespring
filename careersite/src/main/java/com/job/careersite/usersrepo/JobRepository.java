@@ -11,28 +11,28 @@ import java.util.List;
 
 @Repository
 public interface JobRepository extends JpaRepository<Job, Long> {
-    // Search methods
+   
     Page<Job> findByTitleContainingOrCompanyContaining(String title, String company, Pageable pageable);
     Page<Job> findByCategory(String category, Pageable pageable);
     Page<Job> findByLocationContaining(String location, Pageable pageable);
     Page<Job> findByFeaturedTrue(Pageable pageable);
     Page<Job> findByTrendingTrue(Pageable pageable);
     
-    // Latest jobs
+   
     List<Job> findTop6ByOrderByCreatedAtDesc();
     
-    // Related jobs
+    
     @Query("SELECT j FROM Job j WHERE j.category = :category AND j.id != :jobId")
     List<Job> findByCategoryAndIdNot(@Param("category") String category, @Param("jobId") Long jobId, Pageable pageable);
     
-    // Count methods
+   
     long countByCompany(String company);    
     long countByCategory(String category);
     
-    // Company jobs
+    
     Page<Job> findByCompanyContaining(String company, Pageable pageable);
     
-    // Group by queries
+   
     @Query("SELECT j.category, COUNT(j) FROM Job j GROUP BY j.category")
     List<Object[]> countJobsByCategory();
     
