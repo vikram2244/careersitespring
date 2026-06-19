@@ -22,7 +22,7 @@ public class JobSummaryDTO {
     private List<String> skills;
     private List<String> responsibilities;
 
-    // Constructor matching the query
+   
     public JobSummaryDTO(Long id, String title, String company, String location, 
                          String salary, String experience, String jobType, 
                          String category, String description, String eligibility,
