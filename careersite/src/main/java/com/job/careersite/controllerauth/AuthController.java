@@ -70,6 +70,10 @@ public class AuthController {
                 .body(Map.of("detail", "An error occurred during registration"));
         }
     }
+    @GetMapping("/hello")
+public ResponseEntity<String> hello() {
+    return ResponseEntity.ok("Hello World !! Wake up rey!!");
+}
 //    @GetMapping("/check-user/{email}")
 //    public ResponseEntity<?> checkUser(@PathVariable String email) {
 //        Optional<User> user = userRepository.findByEmail(email);
